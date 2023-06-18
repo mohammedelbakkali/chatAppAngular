@@ -1,0 +1,29 @@
+
+
+<!-- [ngStyle]="{'background-color': message.sendUser === currentUser ? '#5e4dcd' : '#3898EC' }" -->
+
+<div style="width: 40%;margin: auto; margin-top: 200px;">
+    <form class="example-form" [formGroup]="form">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>Chat App</mat-card-title>
+       
+        </mat-card-header>
+        <mat-card-content>
+          
+          <mat-form-field class="example-full-width">
+            <mat-label>nom</mat-label>
+            <input matInput #message maxlength="256" placeholder="votre nom" formControlName="username">
+            <mat-hint align="start"><strong></strong> </mat-hint>
+            <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+          </mat-form-field> 
+          
+        </mat-card-content>
+        <mat-card-actions>
+       
+          <button mat-button type="submit" (click)="getData()">Rejoindre</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </div>
+  

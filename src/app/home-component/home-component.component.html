@@ -1,0 +1,44 @@
+
+
+<div style="width: 50%; margin: auto; margin-top: 100px;">
+    
+    <h2>Chat App  <strong>Votre ID : {{currentUser}}  </strong> <br><hr> Nom :{{iduser}} </h2>
+    <div class="container_t">
+      <div class="list" #scrollMe>
+        <ng-container *ngIf="chat">
+          <div *ngFor="let message of chat.data">
+            <div
+              class="message"
+              [ngClass]="message.sendUser === currentUser ? 'right' : 'left' "
+            >
+              <div  class="message__body" >
+                <a>
+                  {{message.text}}
+                </a>
+              </div>
+              <div class="message__ts">
+                <small> {{message.ts| date : 'HH:mm'}} </small>
+                <small> {{message.name}} </small>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      <form [formGroup]="form">
+      
+      
+    
+    
+    
+          <div class="input-group">
+            <input class="input" type="text" formControlName="input" [(ngModel)]="valuemessage" >
+            <input class="button--submit" (click)="onSubmit()" value="Subscribe" type="submit">
+      
+    
+         
+        
+        </div>
+      </form>
+    </div>
+    
+     </div>
